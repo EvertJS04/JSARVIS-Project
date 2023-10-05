@@ -4,8 +4,17 @@ from PIL import ImageTk
 import webbrowser
 from tkinter import ttk
 
+#   Every command define unit [def {....}():] is a part of V.mess and the JS[--] Units
+#   Every D.D.S.A. Databank is marked with a comment for ease of adding more
+#   Every import statement is a part of JS.P.U. and JS.PR.U.
+#   Every .Tk() unit is handled by V.W.S.OS.
+#   S.S.EVE is not a unit but the name of the main software that this is all based on
+#   The entire project is S.S.EVE
+#   JARVIS AI is not a part of this project
+#   But a part of the Text Based Structural Interface Track or TB.S.I.T. for short
+#   ----END OF INTRODUCTION AND EXPLANATION COMMENT----
 
-# the startup sequence of the entire programm
+# the startup sequence of the entire program
 SSEVESTARTUP = Tk()
 SSEVESTARTUP.geometry("300x300+500+200")
 SSEVESTARTUP.config(bg="Black")
@@ -35,7 +44,9 @@ def englishsetup():
         file="c:/Users/evert/Documents/J.[S].A.R.V.I.S. Project files/Data/80fc6a6c4325b3eba2e0f2ba7cee2a13.jpg")
     wpr3 = ImageTk.PhotoImage(file="C:/Users/evert/Documents/J.[S].A.R.V.I.S. Project files/Data/1135480.jpg")
 
-    #   startscrbg = ImageTk.PhotoImage(file="C:/Users/evert/Documents/J.[S].A.R.V.I.S. Project files/Data/brudah.jpg")
+    holowpr = ImageTk.PhotoImage(file="C:/Users/evert/Documents/J.[S].A.R.V.I.S. Project files/Data/brudah.jpg")
+
+    #   (pause line to differentiate between the normal code and the D.D.S.A. storage unit)
 
     wp = Label(mainscreen, image=wpr1)
     wp.pack(pady=60)
@@ -101,6 +112,13 @@ def englishsetup():
             settingswindow.attributes("-fullscreen", True)
             settingswindow.config(bg="black")
 
+            def holomode():
+                settingswindow.destroy()
+                wp.config(image=holowpr)
+                startscr()
+                time_label.destroy()
+                starts.geometry("1920x1080")
+
             def wpselect():
                 settingswindow.destroy()
                 wps = Tk()
@@ -155,6 +173,10 @@ def englishsetup():
             def closewndw():
                 settingswindow.destroy()
 
+            holomodebtn = Button(settingswindow, command=holomode, text="hologhraphic interface mode", bg="black",
+                                 width=20, height=2, fg="blue", font=("OCR A Extended", 20))
+            holomodebtn.place(y=500, x=0)
+
             closebtn2 = Button(settingswindow, command=closewndw, text="X", font=("ARIAL", 20), bg="red", width=4,
                                height=1)
             closebtn2.place(y=0, x=1450)
@@ -182,9 +204,6 @@ def englishsetup():
             settingswindow.mainloop()
 
         starts.after(30000, close)
-
-        #   bg1 = Label(starts, image=startscrbg)
-        #   bg1.pack()
 
         bgname = Label(starts, text="J.[S].A.R.V.I.S.", font=("Engravers MT", 100), bg="black", fg="dark blue")
         bgname.place(x=0, y=350)
@@ -293,6 +312,14 @@ def englishsetup():
             settingswindow.attributes("-fullscreen", True)
             settingswindow.config(bg="black")
 
+            def holomode():
+                settingswindow.destroy()
+                start.destroy()
+                wp.config(image=holowpr)
+                startscr1()
+                time_label.destroy()
+                starts.geometry("1920x1080")
+
             def startmen1():
                 starts.destroy()
                 startmenu.config(command=opensm)
@@ -346,6 +373,10 @@ def englishsetup():
 
             def closewndw():
                 settingswindow.destroy()
+
+            holomodebtn = Button(settingswindow, command=holomode, text="hologhraphic interface mode", bg="black",
+                                 width=20, height=2, fg="blue", font=("OCR A Extended", 20))
+            holomodebtn.place(y=500, x=0)
 
             closebtn2 = Button(settingswindow, command=closewndw, text="X", font=("ARIAL", 20), bg="red", width=4,
                                height=1)
@@ -441,7 +472,7 @@ def dutchsetup():
         file="c:/Users/evert/Documents/J.[S].A.R.V.I.S. Project files/Data/80fc6a6c4325b3eba2e0f2ba7cee2a13.jpg")
     wpr3 = ImageTk.PhotoImage(file="C:/Users/evert/Documents/J.[S].A.R.V.I.S. Project files/Data/1135480.jpg")
 
-    #   startscrbg = ImageTk.PhotoImage(file="C:/Users/evert/Documents/J.[S].A.R.V.I.S. Project files/Data/brudah.jpg")
+    #   (pause line to differentiate between the normal code and the D.D.S.A. storage unit)
 
     wp = Label(mainscreend, image=wpr1)
     wp.pack(pady=60)
@@ -588,9 +619,6 @@ def dutchsetup():
             settingswindow.mainloop()
 
         starts.after(30000, close)
-
-        #   bg1 = Label(starts, image=startscrbg)
-        #   bg1.pack()
 
         bgname = Label(starts, text="J.[S].A.R.V.I.S.", font=("Engravers MT", 100), bg="black", fg="dark blue")
         bgname.place(x=0, y=350)
