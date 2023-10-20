@@ -4,6 +4,7 @@ from PIL import ImageTk
 import webbrowser
 from tkinter import ttk
 
+#   ----INTRODUCTION AND EXPLANATION COMMENT----
 #   Every command define unit [def {....}():] is a part of V.mess and the JS[--] Units
 #   Every D.D.S.A. Databank is marked with a comment for ease of adding more
 #   Every import statement is a part of JS.P.U. and JS.PR.U.
@@ -23,12 +24,66 @@ SSEVESTARTUP.overrideredirect(True)
 maintext = Label(SSEVESTARTUP, text="Loading J.[S].A.R.V.I.S.", fg="dark blue", bg="black",
                                     font=("ORC A Extended", 15))
 
+password = Entry(SSEVESTARTUP, width=20, font=20)
+password.place(x=0, y=280)
+
+passwdlist = ("jarvis" + " admin " + "play")
+
+# working passwords are: jarvis, admin, help, and play
+
+
+#   login safety sequence
+def loginlook():
+    login = password.get()
+    if login == "jarvis":
+        english = Button(SSEVESTARTUP, text="English", bg="black", fg="dark blue", command=englishsetup,
+                         font=("OCR A Extended", 20))
+        english.place(x=0, y=250)
+        dutch = Button(SSEVESTARTUP, text="Nederlands", bg="black", fg="dark blue", command=dutchsetup,
+                       font=("OCR A Extended", 18))
+        dutch.place(x=140, y=250)
+        password.destroy()
+        loginbtn.destroy()
+
+    # DEBUG Mode
+    elif login == "admin":
+        debugmode = Tk()
+        debugmode.attributes("-fullscreen", True)
+        debugmode.config(bg="black")
+
+    elif login == "help":
+        passwordhelp = Label(SSEVESTARTUP, text=passwdlist, bg='black', fg='blue', font=("OCR A Extended", 11))
+        passwordhelp.pack(side=TOP)
+
+    else:
+        login_error()
+
+
+loginbtn = Button(SSEVESTARTUP, text="login", command=loginlook)
+loginbtn.place(x=250, y=280)
+
+#   JS Signature:
+
+Signature0 = (Label(SSEVESTARTUP, text=("File==SSEVE; STATE==Complete;"
+                    "Sequence Code==:"
+                    "103AFF540!!VMESS-SSEVE"
+                    "01125812240-VWSOS-C0150--!"), fg="black", bg="Black"))
+Signature0.pack(side=TOP)
+
 
 def englishsetup():
     SSEVESTARTUP.destroy()
     mainscreen = Tk()
     mainscreen.attributes("-fullscreen", True)
     mainscreen.config(bg="black")
+
+    #   JS Signature:
+
+    signature1 = (Label(mainscreen, text=("File==SSEVE; STATE==Complete;"
+                        "Sequence Code==:"
+                        "5837FF540!!SSEVE"
+                        "50725203240-VWSOS-C0450--!"), fg="black", bg="Black"))
+    signature1.pack(side=TOP)
 
     # D.D.S.A. Storage Unit
 
@@ -66,6 +121,14 @@ def englishsetup():
         starts.geometry("1200x900")
         starts.config(bg="black")
         starts.overrideredirect(True)
+
+        #   JS Signature:
+
+        signature2 = (Label(starts, text=("File==SSEVE; STATE==Complete;"
+                                        "Sequence Code==:"
+                                        "103GDQ540!!VMESS"
+                                        "01586712240-VWSOS-C9990--!"), fg="black", bg="Black"))
+        signature2.pack(side=TOP)
 
         def clock2():
             time_string2 = strftime("%H:%M:%S")
@@ -112,6 +175,14 @@ def englishsetup():
             settingswindow.attributes("-fullscreen", True)
             settingswindow.config(bg="black")
 
+            #   JS Signature:
+
+            signature3 = (Label(SSEVESTARTUP, text=("File==settings; STATE==Complete;"
+                                                    "Sequence Code==:"
+                                                    "103UPF540!!SSEVE"
+                                                    "09925812240-VWSOS-C0890--!"), fg="black", bg="Black"))
+            signature3.pack(side=TOP)
+
             def holomode():
                 settingswindow.destroy()
                 wp.config(image=holowpr)
@@ -155,11 +226,11 @@ def englishsetup():
                 wp3btn.pack()
 
             def startmen():
-                start.destroy()
+                starts.destroy()
                 startmenu.config(command=opensm)
 
             def startscr():
-                starts.destroy()
+                start.destroy()
                 startmenu.config(command=openstartscreen)
 
             def clockswitch_off():
@@ -429,13 +500,61 @@ def englishsetup():
 
         clock2()
 
+    def fulltime():
+        timew = Tk()
+        timew.geometry("250x200+1290+670")
+        timew.overrideredirect(True)
+        timew.config(bg="#000030")
+
+        def closetime():
+            timew.destroy()
+
+        closetimebtn = Button(timew, command=closetime, bg="red", fg="black", text="X", width=100)
+        closetimebtn.pack(side=TOP)
+
+        def detailtime():
+            detailtimestring = strftime("%H:%M:%S")
+            detailtimelabel.config(text=detailtimestring)
+
+            timew.after(10, detailtime)
+
+        detailtimelabel = Label(timew, font=("OCR A Extended", 20), fg="blue", bg="#000030")
+        detailtimelabel.pack(side=TOP)
+
+        detailtime()
+
+        def date():
+            datestring = strftime("%d/%m/%Y")
+            datelabel.config(text=datestring)
+
+            timew.after(10, date)
+
+        datelabel = Label(timew, font=("OCR A Extended", 20), fg="blue", bg="#000030")
+        datelabel.pack(side=TOP)
+
+        date()
+
+        def detaildate():
+            detaildatestring = strftime("%A/%B/%Y")
+            detaildatelabel.config(text=detaildatestring)
+
+            timew.after(10, detaildate)
+
+        detaildatelabel = Label(timew, font=("OCR A Extended", 15), fg="blue", bg="#000030")
+        detaildatelabel.pack(side=TOP)
+
+        detaildate()
+
+        timew.mainloop()
+
     def clockd():
         time_string = strftime("%A/%H:%M")
         time_label.config(text=time_string, padx=620)
 
         mainscreen.after(10, clockd)
 
-    time_label = Label(mainscreen, font=("OCR A Extended", 20), fg="blue", bg="#000030", width=100)
+    time_label = Button(mainscreen, font=("OCR A Extended", 20), fg="blue", bg="#000030",
+                        width=100, command=fulltime, border=0)
     time_label.place(y=830, x=0)
 
     clockd()
@@ -443,10 +562,10 @@ def englishsetup():
     startmenu = Button(mainscreen, bg="Black", image=shutdown_logo, command=opensm, width=50, text="Start")
     startmenu.place(y="835", x="0")
 
-    browser = Button(mainscreen, image=browserlogo, command=open_browser, bg="black")
+    browser = Button(mainscreen, image=browserlogo, border=0, command=open_browser, bg="black")
     browser.place(x=1400, y=0)
 
-    vscode = Button(mainscreen, bg="black", image=vscimage, command=open_vsc)
+    vscode = Button(mainscreen, bg="black", image=vscimage, border=0, command=open_vsc)
     vscode.place(x=1330, y=0)
 
     mainscreen.mainloop()
@@ -830,13 +949,61 @@ def dutchsetup():
 
         clock2()
 
+    def fulltime():
+        timew = Tk()
+        timew.geometry("250x200+1290+670")
+        timew.overrideredirect(True)
+        timew.config(bg="#000030")
+
+        def closetime():
+            timew.destroy()
+
+        closetimebtn = Button(timew, command=closetime, bg="red", fg="black", text="X", width=100)
+        closetimebtn.pack(side=TOP)
+
+        def detailtime():
+            detailtimestring = strftime("%H:%M:%S")
+            detailtimelabel.config(text=detailtimestring)
+
+            timew.after(10, detailtime)
+
+        detailtimelabel = Label(timew, font=("OCR A Extended", 20), fg="blue", bg="#000030")
+        detailtimelabel.pack(side=TOP)
+
+        detailtime()
+
+        def date():
+            datestring = strftime("%d/%m/%Y")
+            datelabel.config(text=datestring)
+
+            timew.after(10, date)
+
+        datelabel = Label(timew, font=("OCR A Extended", 20), fg="blue", bg="#000030")
+        datelabel.pack(side=TOP)
+
+        date()
+
+        def detaildate():
+            detaildatestring = strftime("%A/%B/%Y")
+            detaildatelabel.config(text=detaildatestring)
+
+            timew.after(10, detaildate)
+
+        detaildatelabel = Label(timew, font=("OCR A Extended", 15), fg="blue", bg="#000030")
+        detaildatelabel.pack(side=TOP)
+
+        detaildate()
+
+        timew.mainloop()
+
     def clock2d():
         time_string = strftime("%A/%H:%M")
         time_label.config(text=time_string, padx=620)
 
         mainscreend.after(10, clock2d)
 
-    time_label = Label(mainscreend, font=("OCR A Extended", 20), fg="blue", bg="#000030", width=100)
+    time_label = Button(mainscreend, font=("OCR A Extended", 20), fg="blue", bg="#000030",
+                        width=100, command=fulltime, border=0)
     time_label.place(y=830, x=0)
 
     clock2d()
@@ -844,21 +1011,14 @@ def dutchsetup():
     startmenu = Button(mainscreend, bg="Black", image=shutdown_logo, command=opensm, width=50, text="Start")
     startmenu.place(y="835", x="0")
 
-    browser = Button(mainscreend, image=browserlogo, command=open_browser, bg="black")
+    browser = Button(mainscreend, image=browserlogo, border=0, command=open_browser, bg="black")
     browser.place(x=1400, y=0)
 
-    vscode = Button(mainscreend, bg="black", image=vscimage, command=open_vsc)
+    vscode = Button(mainscreend, bg="black", border=0, image=vscimage, command=open_vsc)
     vscode.place(x=1330, y=0)
 
     mainscreend.mainloop()
 
-
-english = Button(SSEVESTARTUP, text="English", bg="black", fg="dark blue", command=englishsetup,
-                 font=("OCR A Extended", 20))
-english.pack(side=BOTTOM)
-dutch = Button(SSEVESTARTUP, text="Nederlands", bg="black", fg="dark blue", command=dutchsetup,
-               font=("OCR A Extended", 20))
-dutch.pack(side=BOTTOM)
 
 maintext.pack()
 
@@ -874,4 +1034,28 @@ clockslbl = Label(SSEVESTARTUP, font=("OCR A Extended", 25), fg="blue", bg="blac
 clockslbl.pack()
 
 clocks()
+
+
+def login_error():
+    error = Tk()
+    error.title("WARNING")
+    error.config(bg="black")
+    error.geometry("400x200+500+400")
+
+    errortext = Label(error, text="", font=("OCR A Extended", 25), fg="blue", bg="black")
+    errortext.pack()
+
+    errortext.config(text="Invalid Password")
+
+    error.mainloop()
+
+
+def sig_check():
+    if not Signature0:
+        errortext.config(text=not + "not found")
+        error_message()
+
+
+sig_check()
+
 SSEVESTARTUP.mainloop()
