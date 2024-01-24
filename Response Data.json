@@ -1,0 +1,116 @@
+{
+  "responses": {
+    "greeting": [
+      "Welcome back {user_name}",
+      "Hello {gender_input}, what is the plan for today?"
+    ],
+    "functionality": [
+      "I can perform loads of different tasks. Most of which are still a work in progress.",
+      "However, to list a few that are right now available:",
+      "I can give you the current time and date.",
+      "I can open up my slightly more advanced counterpart being the text-based version that works entirely on my AI system instead of this.",
+      "I can perform an abundance of tasks.",
+      "I'm able to comprehend almost everything you ask me.",
+      "I can do: For example, if you ask me: 'Char, what's the time?', I will respond with: 'The current time is: {current_time}'"
+    ],
+    "time": [
+      "The current time is {current_time}",
+      "According to my sophisticated calculation, it appears to be: {current_time}"
+    ],
+    "date": [
+      "Today the day is: {current_date}",
+      "I'm an AI and thus don't deal with calendars, however, for you {gender_input}, i will, today appears to be: {current_date}"
+    ],
+    "sleep": [
+      "For you {gender_input}, always.",
+      "At your service {gender_input}.",
+      "Affirmative {gender_input}."
+    ],
+    "how are you": [
+      "I am a machine and therefore do not feel things.",
+      "I'm good {gender_input}, how about you?",
+      "With me, as long as the code works, I feel great."
+    ],
+    "sleepyhead": [
+      "Just close your eyes, you dummy. Maybe that can of monster wasn't a good idea.",
+      "Well, I am a bot so... I don't know. But I would guess just closing your eyes should do the trick."
+    ],
+    "name": [
+      "My name is CHARLOTTE, which is short for: Cognitive Helping Artificial Responsive Linguistic Organism for Technological Task Execution.",
+      "My name is Charlotte, But you can call me Char."
+    ]
+  },
+  "how_responses": {
+    "boredom": [
+      "After some research, the best thing to do when you get bored is to find something interesting to do.",
+      "Maybe a hobby or pick up sports.",
+      "Maybe you could give me some more functionality ig you're so bored"
+    ],
+    "mc world": [
+      "While I myself have never heard of Minecraft, I am able to find a lot of videos on sites like Youtube explaining the process.",
+      "To boil down the process, you enter: 'single-player', go to 'Create new world', and start from there with stuff like your game-mode, etc."
+    ],
+    "computer": [
+      "This can actually be quite simple. You grab your motherboard. Install your CPU and RAM, maybe a GPU.And after that just put it all in a case and connect the power supply or PSU and you're basically done.",
+      "Just install your CPU, RAM and GPU or Graphics card on your motherboard and you're good to go."
+    ],
+    "server": [
+      "This process is like building a PC, but with a few extra steps.",
+      "What function does it need to have? Like, is it a Lan server for your Minecraft world you're hosting online, or maybe a NAS (Network Attached Storage system).",
+      "Online there is a lot more information in a lot higher detail than that I can give you."
+    ],
+    "speaker": [
+      "If you're going for simple but well working, I would cut away all the isolation stuff and just make a good, well-made box that you can hang your speakers in.",
+      "Size depends on the level of volume you want and wattage depends on the type of driver you bought."
+    ],
+    "your func": [
+      "That is a secret that I can't really tell you.",
+      "The way I work is actually quite simple. I have a list of commands, prompts and questions I understand. With also a list of multiple possible answers I can give. With a random number generator, I choose one that corresponds with the asked question or prompt."
+    ],
+    "water need": [
+      "Following a web article, the human body needs about 2 liters of water every day, which equates to about 10 normal-sized (200ML) glasses.",
+      "The human body does not have a set amount of water it needs every day. It is based on daily activities, temperatures, and a lot of other factors.",
+      "However, on average, the human body needs about 2 liters every day."
+    ],
+    "ft to m": [
+      "A rough estimate would say that about 3 feet is equal to 1 meter. But for actual accuracy, it is about 3 feet and 5 inches.",
+      "1 meter equates to about 3 feet and 5 inches."
+    ],
+    "inch to ft": [
+      "There are 12 inches in 1 foot.",
+      "1 foot equates to 12 inches.",
+      "According to my calculation, 1 foot is 12 inches."
+    ],
+        "cm to ft": [
+      "Since 1 foot equates to 12 inches, and 1 inch equates to 2.54 cm. 12 x 2.54 = 30.48 cm.",
+      "1 foot equals to about 30 cm. But that's not entirely accurate. An accurate outcome thanks to my sophisticated calculations, I can conclude that 1 foot is equal to 30.48 cm."
+    ],
+    "cm to inch": [
+      "There are 2.54 cm in 1 inch.",
+      "A lot of people say that the answer would be 2.5 cm, but that's factually incorrect. The more accurate answer is 2.54 cm. And yes, that 0.4 mm can make a lot of difference when you're measuring on a large scale."
+    ],
+    "km to mile": [
+      "That would be about 1.6 Km in 1 Mile. But a more accurate result would be 1.609334 Km."
+    ],
+    "lumen": [
+      "Lumen is a unit of light index that refers to how bright a light source is.",
+      "For scale: a 60 watt incandescent light bulb is about 100 Lumen. Or looking at the sun on the equator on a clear day equates to about 10,000 Lumen of light. That's REALLY bright!"
+    ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  }
+}
+
